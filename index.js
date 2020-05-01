@@ -6,17 +6,30 @@ const sequelize = new Sequelize('learningorm', 'postgres', 'password', {
   dialect: 'postgres', /* one of 'mysql' | 'mariadb' | 'postgres' | 'mssql' */
 });
 
-sequelize
-  .authenticate()
-  .then(() => {
-    console.log('Connection has been established successfully.');
-  })
-  .catch(err => {
-    console.error('Unable to connect to the database:', err);
-  }).finally(() => {
-    console.log('FINALLY BLOCK EXECUTED');
-    sequelize.close();
-    console.log('CONNECTION CLOSED');
+class User extends Model {}
+
+User.init({
+  // attributes
+  firstName: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  lastName: {
+    type: Sequelize.STRING
+    // allowNull defaults to true
+  }
+}, {
+  sequelize,
+  modelName: 'user'
+  // options
+});
+
+User.sync().then(() => {
+  // Now the `users` table in the database corresponds to the model definition
+  return User.create({
+    firstName: 'John',
+    lastName: 'Hancock'
   });
+});
 
 console.log('EXITING PROGRAM');
