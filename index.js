@@ -40,14 +40,24 @@ User.init({
 // {
 //   console.log('Done')
 // });
-User.update({
-  lastName:'Wick',
-},{
-  where:{
-    lastName:'Hancock',
-  }
-}).then(()=>{
-  console.log('DONE UPDATING');
-})
+// User.update({
+//   lastName:'Wick',
+// },{
+//   where:{
+//     lastName:'Hancock',
+//   }
+// }).then(()=>{
+//   console.log('DONE UPDATING');
+// })
 
 // console.log('EXITING PROGRAM');
+User.findAndCountAll({
+  where:{
+    id:[1,7,3],
+  },
+  offset:1,
+  limit:2,
+}).then((result)=>{
+  console.log(result.count);
+  console.log(JSON.stringify(result.rows,null,4));
+})
