@@ -32,13 +32,22 @@ User.init({
 // User.findAll().then(users=>{
 //   console.log('All users',JSON.stringify(users,null,4));
 // });
-User.destroy({
+// User.destroy({
+//   where:{
+//     createdAt:"2020-05-01 14:28:43.535+05:30"
+//   }
+// }).then(()=>
+// {
+//   console.log('Done')
+// });
+User.update({
+  lastName:'Wick',
+},{
   where:{
-    createdAt:"2020-05-01 14:28:43.535+05:30"
+    lastName:'Hancock',
   }
-}).then(()=>
-{
-  console.log('Done')
-});
+}).then(()=>{
+  console.log('DONE UPDATING');
+})
 
 // console.log('EXITING PROGRAM');
