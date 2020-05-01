@@ -29,16 +29,16 @@ User.init({
 //   firstName: 'Shashwat',
 //   lastName: 'Sinha'
 // });
-User.findAll().then(users=>{
-  console.log('All users',JSON.stringify(users,null,4));
-});
-// User.destroy({
-//   where:{
-//     firstName:"Shashwat"
-//   }
-// }).then(()=>
-// {
-//   console.log('Done')
+// User.findAll().then(users=>{
+//   console.log('All users',JSON.stringify(users,null,4));
 // });
+User.destroy({
+  where:{
+    createdAt:"2020-05-01 14:28:43.535+05:30"
+  }
+}).then(()=>
+{
+  console.log('Done')
+});
 
 // console.log('EXITING PROGRAM');
