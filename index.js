@@ -25,13 +25,13 @@ User.init({
 });
 
   // Now the `users` table in the database corresponds to the model definition
-User.create({
-  firstName: 'Shashwat',
-  lastName: 'Sinha'
-});
-// User.findAll().then(users=>{
-//   console.log('All users',JSON.stringify(users,null,4));
+// User.create({
+//   firstName: 'Shashwat',
+//   lastName: 'Sinha'
 // });
+User.findAll().then(users=>{
+  console.log('All users',JSON.stringify(users,null,4));
+});
 // User.destroy({
 //   where:{
 //     firstName:"Shashwat"
