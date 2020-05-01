@@ -24,12 +24,21 @@ User.init({
   // options
 });
 
-User.sync().then(() => {
   // Now the `users` table in the database corresponds to the model definition
-  return User.create({
-    firstName: 'John',
-    lastName: 'Hancock'
-  });
+User.create({
+  firstName: 'Shashwat',
+  lastName: 'Sinha'
 });
+// User.findAll().then(users=>{
+//   console.log('All users',JSON.stringify(users,null,4));
+// });
+// User.destroy({
+//   where:{
+//     firstName:"Shashwat"
+//   }
+// }).then(()=>
+// {
+//   console.log('Done')
+// });
 
-console.log('EXITING PROGRAM');
+// console.log('EXITING PROGRAM');
