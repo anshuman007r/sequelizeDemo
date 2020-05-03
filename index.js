@@ -51,13 +51,16 @@ User.init({
 // })
 
 // console.log('EXITING PROGRAM');
-User.findAndCountAll({
-  where:{
-    id:[1,7,3],
-  },
-  offset:1,
-  limit:2,
-}).then((result)=>{
-  console.log(result.count);
-  console.log(JSON.stringify(result.rows,null,4));
+// User.findAndCountAll({
+//   where:{
+//     id:[1,7,3],
+//   },
+//   offset:1,
+//   limit:2,
+// }).then((result)=>{
+//   console.log(result.count);
+//   console.log(JSON.stringify(result.rows,null,4));
+// })
+User.findAll().then((result)=>{
+  console.log(JSON.stringify(result,null,4))
 })
